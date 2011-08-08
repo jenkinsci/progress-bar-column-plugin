@@ -22,8 +22,15 @@
   THE SOFTWARE.
 -->
 
+<?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:t="/lib/hudson">
+  <j:set var="lastBuild" value="${job.lastBuild}" />
   <td>
-    <t:progressBar pos="30"/>
+    <j:choose>
+      <j:when test="${lastBuild.building}">
+        <t:buildProgressBar build="${lastBuild}" />
+      </j:when>
+      <j:otherwise />
+    </j:choose>
   </td>
 </j:jelly>

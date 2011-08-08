@@ -25,44 +25,28 @@
 package org.jenkins.ci.plugins.progress_bar;
 
 import hudson.Extension;
-import hudson.model.Descriptor;
+import hudson.views.ListViewColumnDescriptor;
 import hudson.views.ListViewColumn;
-import net.sf.json.JSONObject;
 
-import org.jenkins.ci.plugins.progress_bar.Messages;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * A {@link ListViewColumn} which adds a fast-path icon to the
- * <code>lastBuild</code> console output.
+ * A {@link ListViewColumn} which adds the standard build progress bar.
  * 
  * @author <a href="mailto:jieryn@gmail.com">Jesse Farinacci</a>
  * @since 1.0
  */
 public final class ProgressBarColumn extends ListViewColumn {
-  /**
-   * The plugin descriptor.
-   */
-  private static final class ConsoleColumnDescriptor extends Descriptor<ListViewColumn> {
-    @Override
-    public String getDisplayName() {
-      return Messages.Progress_Bar_Plugin_DisplayName();
-    }
+	@Extension
+	public static class DescriptorImpl extends ListViewColumnDescriptor {
+		@Override
+		public String getDisplayName() {
+			return Messages.Progress_Bar_Plugin_DisplayName();
+		}
+	}
 
-    @Override
-    public ListViewColumn newInstance(final StaplerRequest request, final JSONObject formData) throws FormException {
-      return new ProgressBarColumn();
-    }
-  }
-
-  /**
-   * The plugin descriptor.
-   */
-  @Extension
-  public static final Descriptor<ListViewColumn> DESCRIPTOR = new ConsoleColumnDescriptor();
-
-  @Override
-  public Descriptor<ListViewColumn> getDescriptor() {
-    return DESCRIPTOR;
-  }
+	@DataBoundConstructor
+	public ProgressBarColumn() {
+		super();
+	}
 }

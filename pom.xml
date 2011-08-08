@@ -31,7 +31,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.396</version>
+    <version>1.421</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -236,7 +236,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-doap-plugin</artifactId>
-        <version>${maven-doap-plugin.version}</version>
         <executions>
           <execution>
             <id>site</id>
@@ -255,7 +254,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
-        <version>${maven-site-plugin.version}</version>
       </plugin>
     </plugins>
   </build>
