@@ -21,11 +21,11 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 -->
-
+<?jelly escape-by-default='true'?>
 <div>
   <span>
     The
-    <a href="http://wiki.jenkins-ci.org/display/JENKINS/Progress+Bar+Column+Plugin">Progress Bar Column Plugin</a>
+    <a href="https://plugins.jenkins.io/progress-bar-column-plugin/">Progress Bar Column Plugin</a>
     provides a progress bar available for views.
   </span>
 </div>
